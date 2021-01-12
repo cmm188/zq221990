@@ -1,12 +1,12 @@
-＃此工作流程将全新安装节点依赖项，构建源代码并在不同版本的节点上运行测试
-＃有关更多信息，请参见：https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+＃此工作流程将全新安装上游依赖项，并生成源代码并在不同版本的例程上运行测试
+＃有关更多信息，请参见：https：//help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
 名字：中青看点
 
 在：
-  workflow_dispatch：
+  工作流调度：
   时间表：
-     - cron的：' * / 28 * * * * '
+     -的cron的：' * / 28 * * * * '
   观看：
     类型：开始
 
@@ -14,27 +14,27 @@
   建立：
     运行：ubuntu-latest
     如果：github.event.repository.owner.id == github.event.sender.id
-    env：
+    环保：
         YOUTH_HEADER：$ {{ secrets.YOUTH_HEADER }}
         YOUTH_ARTBODY：$ {{ secrets.YOUTH_ARTBODY }}
         YOUTH_REDBODY：$ {{ secrets.YOUTH_REDBODY }}
         YOUTH_TIME：$ {{ secrets.YOUTH_TIME }}
     步骤：
       -名称：结帐
-        用途：actions / checkout @ v2
+        用途：动作/结帐@ v2
       -名称：使用Node.js 12.x
-        用途：actions / setup-node @ v1
+        用途：动作/设置节点@ v1
         与：
-          节点版本：12.x
-      -名称：npm install
+          官方版本：12.x
+      -名称：npm安装
         如果：env.YOUTH_HEADER
         运行：|
           npm安装
       -名称：'运行【中青看点】'
         如果：env.YOUTH_HEADER
         运行：|
-          节点Task / youth.js
-        env：
+          任务/ Youth.js
+        环保：
           YOUTH_NOTIFY_CONTROL：$ {{ secrets.YOUTH_NOTIFY_CONTROL }}
           PUSH_KEY：$ {{ secrets.PUSH_KEY }}
           BARK_PUSH：$ {{ secrets.BARK_PUSH }}
@@ -43,5 +43,4 @@
           BARK_SOUND：$ {{ secrets.BARK_SOUND }}
           DD_BOT_TOKEN：$ {{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET：$ {{ secrets.DD_BOT_SECRET }}
-
     
