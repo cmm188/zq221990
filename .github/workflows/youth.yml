@@ -1,47 +1,47 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+＃此工作流程将全新安装节点依赖项，构建源代码并在不同版本的节点上运行测试
+＃有关更多信息，请参见：https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 中青看点
+名字：中青看点
 
-on:
-  workflow_dispatch:
-  schedule:
-     - cron: '*/35 * * * *'
-  watch:
-    types: started
+在：
+  workflow_dispatch：
+  时间表：
+     - cron的：' * / 28 * * * * '
+  观看：
+    类型：开始
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id
-    env:
-        YOUTH_HEADER: ${{ secrets.YOUTH_HEADER }}
-        YOUTH_ARTBODY: ${{ secrets.YOUTH_ARTBODY }}
-        YOUTH_REDBODY: ${{ secrets.YOUTH_REDBODY }}
-        YOUTH_TIME: ${{ secrets.YOUTH_TIME }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-      - name: npm install
-        if: env.YOUTH_HEADER
-        run: |
-          npm install
-      - name: '运行 【中青看点】'
-        if: env.YOUTH_HEADER
-        run: |
-          node Task/youth.js
-        env:
-          YOUTH_NOTIFY_CONTROL: ${{ secrets.YOUTH_NOTIFY_CONTROL }}
-          PUSH_KEY: ${{ secrets.PUSH_KEY }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
-          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-          TG_USER_ID: ${{ secrets.TG_USER_ID }}
-          BARK_SOUND: ${{ secrets.BARK_SOUND }}
-          DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
-          DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
+职位：
+  建立：
+    运行：ubuntu-latest
+    如果：github.event.repository.owner.id == github.event.sender.id
+    env：
+        YOUTH_HEADER：$ {{ secrets.YOUTH_HEADER }}
+        YOUTH_ARTBODY：$ {{ secrets.YOUTH_ARTBODY }}
+        YOUTH_REDBODY：$ {{ secrets.YOUTH_REDBODY }}
+        YOUTH_TIME：$ {{ secrets.YOUTH_TIME }}
+    步骤：
+      -名称：结帐
+        用途：actions / checkout @ v2
+      -名称：使用Node.js 12.x
+        用途：actions / setup-node @ v1
+        与：
+          节点版本：12.x
+      -名称：npm install
+        如果：env.YOUTH_HEADER
+        运行：|
+          npm安装
+      -名称：'运行【中青看点】'
+        如果：env.YOUTH_HEADER
+        运行：|
+          节点Task / youth.js
+        env：
+          YOUTH_NOTIFY_CONTROL：$ {{ secrets.YOUTH_NOTIFY_CONTROL }}
+          PUSH_KEY：$ {{ secrets.PUSH_KEY }}
+          BARK_PUSH：$ {{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN：$ {{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID：$ {{ secrets.TG_USER_ID }}
+          BARK_SOUND：$ {{ secrets.BARK_SOUND }}
+          DD_BOT_TOKEN：$ {{ secrets.DD_BOT_TOKEN }}
+          DD_BOT_SECRET：$ {{ secrets.DD_BOT_SECRET }}
 
     
