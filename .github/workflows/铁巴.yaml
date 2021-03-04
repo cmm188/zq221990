@@ -1,0 +1,32 @@
+name: 铁巴
+
+on:
+  workflow_dispatch:
+  schedule:
+     - cron: '1 19 * * *'
+  watch:
+    types: started
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    env:
+        COOKIE_TB: ${{ secrets.COOKIE_TB }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: npm install
+        run: |
+          npm install
+      - name: '运行 【铁巴】'
+        if: env.JD_COOKIE
+        run: |
+          node Task/jingxi.js
+        env:
+          OOKIE_TB: ${{ secrets.COOKIE_TB }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          
