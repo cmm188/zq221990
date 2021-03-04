@@ -29,4 +29,5 @@ jobs:
         env:
           OOKIE_TB: ${{ secrets.COOKIE_TB }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          SYNCURL: https://raw.githubusercontent.com/cmm188/zqkd/master/Task/TB.js
           
