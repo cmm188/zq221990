@@ -1,5 +1,5 @@
 
-name: 微博每日签到打卡
+name: 铁巴
 
 on:
   workflow_dispatch:
