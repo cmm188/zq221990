@@ -1,9 +1,10 @@
-name: 铁巴
+
+name: 微博每日签到打卡
 
 on:
   workflow_dispatch:
   schedule:
-     - cron: '1 19 * * *'
+     - cron: '5 18 * * *'
   watch:
     types: started
 jobs:
@@ -11,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        COOKIE_TB: ${{ secrets.COOKIE_TB }}
+        TB_COOKIE: ${{ secrets.TB_COOKIE }}
+        
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -20,14 +22,14 @@ jobs:
         with:
           node-version: 12.x
       - name: npm install
+        if: env.TB_COOKIE
         run: |
           npm install
       - name: '运行 【铁巴】'
-        if: env.JD_COOKIE
+        if: env.WB_TOKEN
         run: |
-          node Task/jingxi.js
+          node Task/TB.js
         env:
-          OOKIE_TB: ${{ secrets.COOKIE_TB }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
-          SYNCURL: https://raw.githubusercontent.com/cmm188/zqkd/master/Task/TB.js
+          TB_COOKIE: ${{ secrets.TB_COOKIE }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}qkd/master/Task/TB.js
           
