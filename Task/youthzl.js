@@ -19,7 +19,7 @@ const axios = require('axios');
       
         var j = randomString();
     
-    const url = 'https://script.baertt.com/count2/callback?si='+j+'&referer=https%253A%252F%252Ffocus.youth.cn%252Farticle%252Fs%253Fsignature%253DRQ3qz2nVgKk9rep70KLvrYCXzoKnSkRBZ5r4yXmv0ZJLWANOM5%2526uid%253D51526616%2526phone_code%253Da2823679662e562c3bb1fade2b2f3d5b%2526scid%253D37822898%2526time%253D1619561264%2526app_version%253D2.0.2%2526sign%253Da54847ebda3141e1e7285d29693edca2&_=1619561307802&jsonpcallback=jsonp6';
+    const url = 'https://script.baertt.com/count2/callback?si='+j+'&e506acdada4372aeab0c1109181294f2&referer=https%253A%252F%252Ffocus.youth.cn%252Farticle%252Fs%253Fsignature%253D8MzJgNdEKAO0xvq7nDW3z0UjrbvPu5w6MoJ1ZPYQ3lm9pbD2yn%2526uid%253D52759849%2526phone_code%253Df366260adcd3a6e11e53babb137a325c%2526scid%253D37860150%2526time%253D1619599060%2526app_version%253D1.8.0%2526sign%253D2fd0983328230d0ef489cb2180f84ae8&_=1619599168820&jsonpcallback=jsonp6';
     
     
     
