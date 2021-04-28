@@ -33,7 +33,7 @@ jobs:
       - name: '运行 【中青助力】'
         if: env.YOUTH_HEADER
         run: |
-          node task/youthzl.js
+          node Task/youthzl.js
         env:
           YOUTH_NOTIFY_CONTROL: ${{ secrets.YOUTH_NOTIFY_CONTROL }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
