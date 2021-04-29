@@ -6,7 +6,7 @@ name: 中青助力
 on:
   workflow_dispatch:
   schedule:
-     - cron: '55 21,22,23,1,2,3,4,5,8,9,10,12 * * *'
+     - cron: '0 21,22,23,1,2,3,4,5,8,9,10,12 * * *'
   watch:
     types: started
 
