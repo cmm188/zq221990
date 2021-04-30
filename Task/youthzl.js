@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 
- 
+ //随机si
     function randomString() {
       let len = 32;
       let $chars = "abcdefhijkmnprstwxyz123456789";
@@ -14,16 +14,18 @@ const axios = require('axios');
     }
     
     
-
+    
+    //获取分享时间字符串
+    var q=Date.parse(new Date())/1000;
+    
+//get 函数
     var aa=function(){
       
         var j = randomString();
-    
+ var p = new Date().getTime();
     const url = 'https://script.baertt.com/count2/callback?si='+j+'&referer=https%253A%252F%252Ffocus.youth.cn%252Farticle%252Fs%253Fsignature%253DMq8BYdozK36wyv5a2ewE3RuEjJ8KCN3Wv8X7nPDWpxVg2LZmRX%2526uid%253D52759849%2526phone_code%253Df366260adcd3a6e11e53babb137a325c%2526scid%253D37761192%2526time%253D'+q+'%2526app_version%253D1.8.0%2526sign%253De9f19ffe55106bb9bf46318a3eac650d&_='+p+'&jsonpcallback=jsonp6';
     
-    
-    
-     return axios.get(url, {
+    return axios.get(url, {
     
       headers: {'Referer' : 'https://focus.youth.cn/',
     'Host' : 'script.baertt.com',
@@ -31,21 +33,31 @@ const axios = require('axios');
     }).then((res) => { 
       //then 成功
       console.log(j);
+       console.log(p);
     }).catch((err) => {
       //catch 失败
       console.log("失败")
+      
     
     });
   }
 
 
+
+
 const sleep = function (ms){
   return new Promise(resolve => setTimeout(resolve, ms))
+  
 }
 const request = async function(){
   for(let i=0;i<50;i++){
     aa();
-    await sleep(2000);
+    var num=Math.ceil(Math.random() * 25);
+    await sleep(num*500);
   }
 }
+
+
+
+
 request();
