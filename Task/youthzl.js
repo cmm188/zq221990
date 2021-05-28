@@ -23,7 +23,7 @@ const axios = require('axios');
       
         var j = randomString();
  var p = new Date().getTime();
-    const url= 'https://script.baertt.com/count2/callback?si='+j+'&referer=https%253A%252F%252Ffocus.youth.cn%252Farticle%252Fshare_eightnew%253Fsignature%253DG6vDYbegoP2Owr90x84KkVogAUro5y54jVBXQnmqNLEMRyzZ3l%2526scene_id%253Dhome_feed%2526share_id%253D52759849386536911622156409%2526time%253D'+q+'&_='+p+'&jsonpcallback=jsonp6';
+    const url= 'https://script.baertt.com/count2/callback?si='+j+'&referer=https%253A%252F%252Ffocus.youth.cn%252Farticle%252Fshare_eightnew%253Fsignature%253D8W62Rvorl9xBbN3dqEax659bpS2PLKL4pjVLXQDk0GeygYZOJ5%2526scene_id%253Dhome_feed%2526share_id%253D52759849386367681622156434%2526time%253D'+q+'&_='+p+'&jsonpcallback=jsonp3';
     
     return axios.get(url, {
     
